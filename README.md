@@ -1,5 +1,7 @@
 # arch-linux-nvidia-install
 
+## 1.Adım
+
 Öncelikle masaüstü ortamımıza giriş yapıyoruz. Eğer driverdan sebep masaüstüne erişemiyorsak tty modunda giriş yapıyoruz.
 
 Sonrasında kullandığınız terminali açıp gerekli paketleri indiriniz.
@@ -13,6 +15,8 @@ Sonrasında nvidia-dkms paketini indiriyoruz.
  • **sudo pacman -S nvidia-dkms** 
 
 (Ekran kartınız eski ise kendinize uygun paketi bulunuz. Benim bu öğreticide kullandığım ekran kartı GTX 750ti)
+
+## 2.Adım
 
 GRUB Kullanıcıları için:
 
@@ -32,6 +36,8 @@ Yazıyoruz.
 
 (Bu işlem GRUB kullanıcıları içindir. systemd-boot kullanlar için ne yapmaları gerektiği hakkında bilgim yok. İnternette yabancı kaynaklardan rahatlıkla bulabilirsiniz.)
 
+## 3.Adım
+
 Sonrasında mkinitcpio configimizi düzenliyoruz.
 
  • **sudo vim /etc/mkinitcpio.conf**
@@ -46,10 +52,14 @@ Sonrasında terminale
 
 Yazıyoruz ve hata olup olmadığına bakıyoruz. Eğer hata var ise hatayı düzeltip tekrar deneyiniz.
 
+## 4.Adım
+
 nvidia-utils paketlerini de indirmekte fayda var. nvidia-settings de isteğinize bağlı. Ben hiç kullanmadım. Bunları indirmek için de
 
  • **sudo pacman -S nvidia-utils lib32-nvidia-utils nvidia-settings** 
 
 Yazıp indiriniz.
+
+## SON
 
 Ve bu kadardı, artık driveriniz kurulmuş durumda! Sisteminizi yeniden başlatıp giriş yapabilirsiniz. 
